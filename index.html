@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html  ng-app="toDo">
+  <head>
+    <meta charset="utf-8">
+    <title>No-Frills To-Do List</title>
+  </head>
+  <body ng-controller="toDoCtrl">
+    <h1>Stuff To Get Done</h1>
+    <div> <!--User inputs-->
+      <input type="text" ng-model="task" placeholder="Task to complete">
+      <button type="button" ng-click="addToList(task)">Add Task to List</button>
+      <input type="text" ng-model="search" placeholder="Search added tasks">
+    </div>
+    <ul> <!--Generated list-->
+      <li ng-repeat="task in toDoList | filter: search">{{task}}</li>
+    </ul>
+    <script src="angular.min.js" charset="utf-8"></script>
+    <script src="module.js" charset="utf-8"></script>
+    <script src="config.js" charset="utf-8"></script>
+    <script src="controller.js" charset="utf-8"></script>
+  </body>
+</html>
